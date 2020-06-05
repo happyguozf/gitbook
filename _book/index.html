@@ -144,6 +144,89 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="introduction">Introduction</h1>
+<pre><code class="lang-mermaid">graph LR
+A[&#x65B9;&#x5F62;] --&gt;B(&#x5706;&#x89D2;)
+    B --&gt; C{&#x6761;&#x4EF6;a}
+    C --&gt;|a=1| D[&#x7ED3;&#x679C;1]
+    C --&gt;|a=2| E[&#x7ED3;&#x679C;2]
+    F[&#x6A2A;&#x5411;&#x6D41;&#x7A0B;&#x56FE;]
+</code></pre>
+<pre><code class="lang-mermaid">graph TD
+A[&#x65B9;&#x5F62;] --&gt; B(&#x5706;&#x89D2;)
+    B --&gt; C{&#x6761;&#x4EF6;a}
+    C --&gt; |a=1| D[&#x7ED3;&#x679C;1]
+    C --&gt; |a=2| E[&#x7ED3;&#x679C;2]
+    F[&#x7AD6;&#x5411;&#x6D41;&#x7A0B;&#x56FE;]
+</code></pre>
+<pre><code class="lang-flow">st=&gt;start: &#x5F00;&#x59CB;&#x6846;
+op=&gt;operation: &#x5904;&#x7406;&#x6846;
+cond=&gt;condition: &#x5224;&#x65AD;&#x6846;(&#x662F;&#x6216;&#x5426;?)
+sub1=&gt;subroutine: &#x5B50;&#x6D41;&#x7A0B;
+io=&gt;inputoutput: &#x8F93;&#x5165;&#x8F93;&#x51FA;&#x6846;
+e=&gt;end: &#x7ED3;&#x675F;&#x6846;
+st-&gt;op-&gt;cond
+cond(yes)-&gt;io-&gt;e
+cond(no)-&gt;sub1(right)-&gt;op
+</code></pre>
+<pre><code class="lang-flow">st=&gt;start: &#x5F00;&#x59CB;&#x6846;
+op=&gt;operation: &#x5904;&#x7406;&#x6846;
+cond=&gt;condition: &#x5224;&#x65AD;&#x6846;(&#x662F;&#x6216;&#x5426;?)
+sub1=&gt;subroutine: &#x5B50;&#x6D41;&#x7A0B;
+io=&gt;inputoutput: &#x8F93;&#x5165;&#x8F93;&#x51FA;&#x6846;
+e=&gt;end: &#x7ED3;&#x675F;&#x6846;
+st(right)-&gt;op(right)-&gt;cond
+cond(yes)-&gt;io(bottom)-&gt;e
+cond(no)-&gt;sub1(right)-&gt;op
+</code></pre>
+<pre><code class="lang-sequence">&#x5BF9;&#x8C61;A-&gt;&#x5BF9;&#x8C61;B: &#x5BF9;&#x8C61;B&#x4F60;&#x597D;&#x5417;?&#xFF08;&#x8BF7;&#x6C42;&#xFF09;
+Note right of &#x5BF9;&#x8C61;B: &#x5BF9;&#x8C61;B&#x7684;&#x63CF;&#x8FF0;
+Note left of &#x5BF9;&#x8C61;A: &#x5BF9;&#x8C61;A&#x7684;&#x63CF;&#x8FF0;(&#x63D0;&#x793A;)
+&#x5BF9;&#x8C61;B--&gt;&#x5BF9;&#x8C61;A: &#x6211;&#x5F88;&#x597D;(&#x54CD;&#x5E94;)
+&#x5BF9;&#x8C61;A-&gt;&#x5BF9;&#x8C61;B: &#x4F60;&#x771F;&#x7684;&#x597D;&#x5417;&#xFF1F;
+</code></pre>
+<pre><code class="lang-sequence">Title: &#x6807;&#x9898;&#xFF1A;&#x590D;&#x6742;&#x4F7F;&#x7528;
+&#x5BF9;&#x8C61;A-&gt;&#x5BF9;&#x8C61;B: &#x5BF9;&#x8C61;B&#x4F60;&#x597D;&#x5417;?&#xFF08;&#x8BF7;&#x6C42;&#xFF09;
+Note right of &#x5BF9;&#x8C61;B: &#x5BF9;&#x8C61;B&#x7684;&#x63CF;&#x8FF0;
+Note left of &#x5BF9;&#x8C61;A: &#x5BF9;&#x8C61;A&#x7684;&#x63CF;&#x8FF0;(&#x63D0;&#x793A;)
+&#x5BF9;&#x8C61;B--&gt;&#x5BF9;&#x8C61;A: &#x6211;&#x5F88;&#x597D;(&#x54CD;&#x5E94;)
+&#x5BF9;&#x8C61;B-&gt;&#x5C0F;&#x4E09;: &#x4F60;&#x597D;&#x5417;
+&#x5C0F;&#x4E09;--&gt;&gt;&#x5BF9;&#x8C61;A: &#x5BF9;&#x8C61;B&#x627E;&#x6211;&#x4E86;
+&#x5BF9;&#x8C61;A-&gt;&#x5BF9;&#x8C61;B: &#x4F60;&#x771F;&#x7684;&#x597D;&#x5417;&#xFF1F;
+Note over &#x5C0F;&#x4E09;,&#x5BF9;&#x8C61;B: &#x6211;&#x4EEC;&#x662F;&#x670B;&#x53CB;
+participant C
+Note right of C: &#x6CA1;&#x4EBA;&#x966A;&#x6211;&#x73A9;
+</code></pre>
+<pre><code class="lang-mermaid">  sequenceDiagram
+    participant &#x5F20;&#x4E09;
+    participant &#x674E;&#x56DB;
+    &#x5F20;&#x4E09;-&gt;&#x738B;&#x4E94;: &#x738B;&#x4E94;&#x4F60;&#x597D;&#x5417;&#xFF1F;
+    loop &#x5065;&#x5EB7;&#x68C0;&#x67E5;
+        &#x738B;&#x4E94;-&gt;&#x738B;&#x4E94;: &#x4E0E;&#x75BE;&#x75C5;&#x6218;&#x6597;
+    end
+    Note right of &#x738B;&#x4E94;: &#x5408;&#x7406; &#x98DF;&#x7269; &lt;br/&gt;&#x770B;&#x533B;&#x751F;...
+    &#x674E;&#x56DB;--&gt;&gt;&#x5F20;&#x4E09;: &#x5F88;&#x597D;!
+    &#x738B;&#x4E94;-&gt;&#x674E;&#x56DB;: &#x4F60;&#x600E;&#x4E48;&#x6837;?
+    &#x674E;&#x56DB;--&gt;&#x738B;&#x4E94;: &#x5F88;&#x597D;!
+</code></pre>
+<pre><code class="lang-mermaid">        gantt
+        dateFormat  YYYY-MM-DD
+        title &#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x7518;&#x7279;&#x56FE;
+        section &#x8BBE;&#x8BA1;
+        &#x9700;&#x6C42;                      :done,    des1, 2014-01-06,2014-01-08
+        &#x539F;&#x578B;                      :active,  des2, 2014-01-09, 3d
+        UI&#x8BBE;&#x8BA1;                     :         des3, after des2, 5d
+    &#x672A;&#x6765;&#x4EFB;&#x52A1;                     :         des4, after des3, 5d
+        section &#x5F00;&#x53D1;
+        &#x5B66;&#x4E60;&#x51C6;&#x5907;&#x7406;&#x89E3;&#x9700;&#x6C42;                      :crit, done, 2014-01-06,24h
+        &#x8BBE;&#x8BA1;&#x6846;&#x67B6;                             :crit, done, after des2, 2d
+        &#x5F00;&#x53D1;                                 :crit, active, 3d
+        &#x672A;&#x6765;&#x4EFB;&#x52A1;                              :crit, 5d
+        &#x800D;                                   :2d
+        section &#x6D4B;&#x8BD5;
+        &#x529F;&#x80FD;&#x6D4B;&#x8BD5;                              :active, a1, after des3, 3d
+        &#x538B;&#x529B;&#x6D4B;&#x8BD5;                               :after a1  , 20h
+        &#x6D4B;&#x8BD5;&#x62A5;&#x544A;                               : 48h
+</code></pre>
 
                                 
                                 </section>
@@ -179,7 +262,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2020-06-05T03:16:34.208Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-05T03:16:46.387Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2020-06-05T05:25:09.726Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-05T05:46:32.005Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -187,10 +270,6 @@
         
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
-    
-        
-        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
